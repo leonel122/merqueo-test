@@ -22,9 +22,7 @@ const setLikess = (state, { data }) => {
 };
 
 const setReviews = (state, { review }) => {
-  console.log(review.index, "ssssssssssss");
-  console.log(state.posts[review.index]);
-  return produce(state, (draftState) => {
+  return produce(state, draftState => {
     draftState.posts[review.index].reviews.push(review.review);
   });
 };

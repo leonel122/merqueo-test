@@ -21,5 +21,9 @@
 .navBar > .containerNavBar {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.navBar > .containerNavBar >div:first-child {
+  width: 50%;
 }
