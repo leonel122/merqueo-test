@@ -143,6 +143,13 @@
   position: absolute;
   margin-top: -34px;
   margin-left: -18px;
+  display: none;
+  width: 10px;
+}
+
+.showComponent {
+  display: block;
+  transition: all 100s ease;
 }
 
 .fade-enter {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Avatar from "./Avatar";
 import AvartarGroup from "./AvatarGroup";
 import FormNewPost from "./FormNewPost";
@@ -7,9 +7,6 @@ import Reactions from "./Reactions";
 import { TYPE_REVIEW } from "../constans";
 import moment from "moment";
 import moment_es from "moment/locale/es";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-
-const duration = 8000;
 
 moment.locale("es", moment_es);
 
@@ -66,19 +63,15 @@ export default function Card({ post, index }) {
           <div className="divider"></div>
           <div className="actions">
             <div>
-              {!!showReactions && (
-                <div className="reactions">
-                  <TransitionGroup>
-                    <CSSTransition timeout={500} classNames="fade">
-                      <Reactions
-                        in={showReactions}
-                        index={index}
-                        setShowReactions={setShowReactions}
-                      />
-                    </CSSTransition>
-                  </TransitionGroup>
-                </div>
-              )}
+              {/* {!!showReactions && ( */}
+              <div className={`reactions ${showReactions && "showComponent"}`}>
+                <Reactions
+                  in={showReactions}
+                  index={index}
+                  setShowReactions={setShowReactions}
+                />
+              </div>
+              {/* )} */}
               <div
                 onClick={() => {
                   setShowReactions(!showReactions);

@@ -10,13 +10,13 @@ const { Types, Creators } = createActions({
 });
 
 const setPost = (state, { posts }) => {
-  return produce(state, (draftState) => {
-    draftState.posts.push(posts);
+  return produce(state, draftState => {
+    draftState.posts.unshift(posts);
   });
 };
 
 const setLikess = (state, { data }) => {
-  return produce(state, (draftState) => {
+  return produce(state, draftState => {
     draftState.posts[data.index].likess.push(data.user);
   });
 };
@@ -34,7 +34,6 @@ export const posts = createReducer(INITIAL_STATE, {
   [Types.SET_REVIEWS]: setReviews,
 });
 
-export default {
-  Types,
-  Creators,
-};
+const dataExport = { Types, Creators };
+
+export default dataExport;
