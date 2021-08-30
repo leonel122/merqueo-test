@@ -5,6 +5,7 @@ input {
   border-radius: 10px;
   border-radius: 100px;
   padding-left: 12px;
+  font-size: 18px;
 }
 
 input:focus {
@@ -17,6 +18,5 @@ input:focus-visible {
 
 input::placeholder {
   color: $grayText;
-  font-size: 1.5em;
   padding-left: 10px;
 }
